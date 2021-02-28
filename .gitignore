@@ -1,0 +1,4 @@
+build/
+*.rom
+rom.key
+*.adf
