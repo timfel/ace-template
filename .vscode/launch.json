@@ -6,7 +6,7 @@
             "request": "launch",
             "name": "Amiga 500",
             "config": "A500",
-            "program": "${workspaceFolder}/a.mingw",
+            "program": "${workspaceFolder}/build/a.mingw",
             "kickstart": "${workspaceFolder}/amiga-os-130.rom",
             "internalConsoleOptions": "openOnSessionStart"
         },
@@ -14,8 +14,8 @@
             "type": "amiga",
             "request": "launch",
             "name": "Amiga 500+",
-            "config": "A500+",
-            "program": "${workspaceFolder}/a.mingw",
+            "config": "A500",
+            "program": "${workspaceFolder}/build/a.mingw",
             "kickstart": "${workspaceFolder}/amiga-os-204.rom",
             "internalConsoleOptions": "openOnSessionStart"
         },
@@ -29,7 +29,7 @@
             "internalConsoleOptions": "openOnSessionStart"
         },
         {
-            "name": "FS-UAE A500 (no VScode debugging)"
+            "name": "FS-UAE A500 (no VScode debugging)",
             "request": "launch",
             "program": "fs-uae",
             "args": ["${workspaceFolder}/config.fs-uae"],
