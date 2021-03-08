@@ -19,13 +19,17 @@ if(DEFINED ELF2HUNK)
 		TARGET ${PROJECT_EXECUTABLE} POST_BUILD
 		COMMAND ${ELF2HUNK} ${PROJECT_EXECUTABLE} ${PROJECT_OUTPUT_EXECUTABLE}
 	)
+	# output redirection does not always work on all variants of invoking cmake on windows, so
+	# we use this workaround instead
+	FILE(WRITE ${PROJECT_BINARY_DIR}/disassemble.cmake
+		"EXECUTE_PROCESS(COMMAND ${OBJDUMP} --disassemble -S ${PROJECT_EXECUTABLE} OUTPUT_FILE ${PROJECT_NAME_LOWER}.s)")
 	add_custom_command(
 		TARGET ${PROJECT_EXECUTABLE} POST_BUILD
-		COMMAND ${OBJDUMP} --disassemble -S ${PROJECT_EXECUTABLE} > ${PROJECT_NAME_LOWER}.s
+		COMMAND ${CMAKE_COMMAND} ARGS -P ${PROJECT_BINARY_DIR}/disassemble.cmake
 	)
 
-        # for simpler usage with the default vscode settings for the bartman plugin, we copy the outputs
-        add_custom_command(
+	# for simpler usage with the default vscode settings for the bartman plugin, we copy the outputs
+	add_custom_command(
 		TARGET ${PROJECT_EXECUTABLE} POST_BUILD
 		COMMAND ${CMAKE_COMMAND} ARGS -E copy ${PROJECT_EXECUTABLE} ${BARTMAN_DEFAULT_NAME}.elf
 		COMMAND ${CMAKE_COMMAND} ARGS -E copy ${PROJECT_OUTPUT_EXECUTABLE} ${BARTMAN_DEFAULT_NAME}.exe
