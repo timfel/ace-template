@@ -2,3 +2,4 @@ build/
 *.rom
 rom.key
 *.adf
+.vscode/settings.json
