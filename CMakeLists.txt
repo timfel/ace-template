@@ -4,6 +4,8 @@ else()
        if(NOT WIN32)
               message(FATAL_ERROR "Bartman's toolchain works only on Windows. Define AMIGA_GCC_PREFIX to point to Bebbo's toolchain")
        endif()
+       # the toolchain usage redefines WIN32, so we provide another variable
+       set(IS_WIN32 1)
        include(bartman-toolchain.cmake)
 endif()
 
