@@ -7,6 +7,9 @@ else()
        # the toolchain usage redefines WIN32, so we provide another variable
        set(IS_WIN32 1)
        include(bartman-toolchain.cmake)
+       # this is a workaround for a cmake bug when using nmake and gnumake on windows
+       # see: https://gitlab.kitware.com/cmake/cmake/-/issues/21997
+       set(CMAKE_DEPENDS_USE_COMPILER OFF)
 endif()
 
 cmake_minimum_required(VERSION 3.16)
