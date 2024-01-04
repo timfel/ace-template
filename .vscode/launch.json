@@ -4,19 +4,18 @@
         {
             "type": "amiga",
             "request": "launch",
-            "name": "Amiga 500",
-            "config": "A500",
-            "program": "${workspaceFolder}/build/a.mingw",
-            "kickstart": "${workspaceFolder}/amiga-os-130.rom",
+            "name": "AROS",
+            "config": "A1200-FAST",
+            "program": "${workspaceFolder}/build/aceproject",
             "internalConsoleOptions": "openOnSessionStart"
         },
         {
             "type": "amiga",
             "request": "launch",
-            "name": "Amiga 500+",
+            "name": "Amiga 500",
             "config": "A500",
-            "program": "${workspaceFolder}/build/a.mingw",
-            "kickstart": "${workspaceFolder}/amiga-os-204.rom",
+            "program": "${workspaceFolder}/build/aceproject",
+            "kickstart": "${config:amiga.rom-paths.A500}",
             "internalConsoleOptions": "openOnSessionStart"
         },
         {
@@ -24,17 +23,18 @@
             "request": "launch",
             "name": "Amiga 1200",
             "config": "A1200",
-            "program": "${workspaceFolder}/a.mingw",
-            "kickstart": "${workspaceFolder}/amiga-os-314.rom",
+            "program": "${workspaceFolder}/build/aceproject",
+            "kickstart": "${config:amiga.rom-paths.A1200}",
             "internalConsoleOptions": "openOnSessionStart"
         },
         {
-            "name": "FS-UAE A500 (no VScode debugging)",
+            "type": "amiga",
             "request": "launch",
-            "program": "fs-uae",
-            "args": ["${workspaceFolder}/config.fs-uae"],
-            "cwd": "${workspaceFolder}",
+            "name": "Amiga 4000",
+            "config": "A4000",
+            "program": "${workspaceFolder}/build/aceproject",
+            "kickstart": "${config:amiga.rom-paths.A4000}",
             "internalConsoleOptions": "openOnSessionStart"
-        },
+        }
     ]
 }

@@ -1,11 +1,6 @@
 [submodule "deps/ACE"]
 	path = deps/ACE
 	url = https://github.com/AmigaPorts/ACE
-	branch = ptplayer_c
 [submodule "deps/AmigaCMakeCrossToolchains"]
 	path = deps/AmigaCMakeCrossToolchains
 	url = https://github.com/AmigaPorts/AmigaCMakeCrossToolchains
-	branch = bartman
-[submodule "deps/vscode-amiga-debug"]
-	path = deps/vscode-amiga-debug
-	url = https://github.com/BartmanAbyss/vscode-amiga-debug.git

@@ -2,20 +2,7 @@
     "configurations": [
         {
             "name": "Amiga",
-            "includePath": [
-                "${workspaceFolder}/**"
-            ],
-            "defines": [
-                "__GNUC__=8",
-                "_NO_INLINE",
-                "AMIGA"
-            ],
-            "compilerPath": "${default}",
-            "cStandard": "c11",
-            "cppStandard": "c++17",
-            "intelliSenseMode": "gcc-x64",
-            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
-            "configurationProvider": "BartmanAbyss.amiga-debug"
+            "configurationProvider": "ms-vscode.cmake-tools"
         }
     ],
     "version": 4
